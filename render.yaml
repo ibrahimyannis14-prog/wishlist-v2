@@ -3,6 +3,7 @@ services:
     name: wishlist-scraper
     runtime: python
     plan: free
+    rootDir: backend
     region: frankfurt
     buildCommand: "pip install -r requirements.txt && scrapling install"
     startCommand: "gunicorn app:app --bind 0.0.0.0:$PORT --timeout 60 --workers 2"
